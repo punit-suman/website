@@ -1,0 +1,42 @@
+.root {
+    white-space: pre-wrap;
+    text-align: left;
+    border: 1px solid black;
+    padding: 25px;
+    max-width: 75%;
+    min-height: 200px;
+    margin-left: 10%;
+    background-color: black;
+}
+
+.codeContainer {
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: white;
+}
+
+.loaderCursor {
+    display: inline-block;
+    animation: rotate 2s infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.cursorBlink {
+    animation: blinker 1s linear infinite;
+}
+  
+@keyframes blinker {
+    20% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+}
