@@ -9,14 +9,15 @@ export default function CodeBlock() {
     const [startLine4, setStartLine4] = useState(false)
     const [startLine5, setStartLine5] = useState(false)
     const [startLine6, setStartLine6] = useState(false)
+    const [showCursor, setShowCursor] = useState(false)
     const [showLoaderCursor, setShowLoaderCursor] = useState(false)
     const newLine =
 `
-> `
-    const line1 = `> Hi! Welcome to my website.`
+>  `
+    const line1 = `>  Hi! Welcome to my website.`
     const line2 = `Thank you for visiting!`
     const line3 = `Website loading...`
-    const line4 = `This website is currently under construction.`
+    const line4 = `This website is currently under development.`
     const line5 = `Please come back later...`
     const line6 = `Contact: punit.suman1707@gmail.com`
 
@@ -41,8 +42,9 @@ export default function CodeBlock() {
     }
 
     useEffect(() => {
+        setTimeout(() => {setShowCursor(true)}, 400)
         var s = ""
-        addLine(s, line1, 0, 0, null, setStartLine2)
+        setTimeout(() => {setShowLoaderCursor(false); addLine(s, line1, 0, 0, null, setStartLine2);}, 3000)
     }, [])
     useEffect(() => {
         if (startLine2) {
@@ -53,7 +55,7 @@ export default function CodeBlock() {
     useEffect(() => {
         if (startLine3) {
             var s = code
-            setTimeout(() => {s = s + newLine; setCode(s); setShowLoaderCursor(true); setTimeout(() => {setShowLoaderCursor(false); s = s + newLine; setCode(s); addLine(s, line3, 3, (line1 + line2).length, setStartLine3, setStartLine4);}, 2000)}, 1000)
+            setTimeout(() => {s = s + newLine; setCode(s); setShowLoaderCursor(true); setTimeout(() => {setShowLoaderCursor(false); s = s + newLine; setCode(s); addLine(s, line3, 3, (line1 + line2).length, setStartLine3, setStartLine4);}, 1000)}, 1000)
         }
     }, [startLine3])
     useEffect(() => {
@@ -77,11 +79,12 @@ export default function CodeBlock() {
     return (
         <div className={styles.root}>
             <div className={styles.codeContainer}>
-                <b>{code}</b>
-                {showLoaderCursor ?
+                {code}
+                {showCursor ?
+                (showLoaderCursor ?
                     <span className={styles.loaderCursor}>|</span>
                     : <span className={styles.cursorBlink}>{'_'}</span>
-                }
+                ) : <></>}
                 
             </div>
         </div>
