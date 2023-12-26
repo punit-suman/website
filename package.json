@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "install-eslint-config": "npm install eslint eslint-plugin-react eslint-plugin-react-hooks eslint-config-prettier eslint-plugin-prettier eslint-plugin-import prettier eslint-plugin-no-comments eslint-config-airbnb eslint-plugin-css-modules eslint-formatter-summary-chart @stylistic/eslint-plugin-js@latest lint-staged --save-dev",
+    "lint": "eslint \"**/*.{js,jsx}\"",
+    "lint-errors": "eslint --quiet \"./\"",
+    "lint-errors-chart": "eslint --format summary-chart ./",
+    "lint-staged": "lint-staged",
+    "lint-fix": "eslint --fix",
+    "stylelint": "npx stylelint \"**/*.css\"",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "axios": "^1.2.4",
@@ -16,7 +22,19 @@
     "serverless-mysql": "^1.5.4"
   },
   "devDependencies": {
-    "eslint": "8.19.0",
-    "eslint-config-next": "12.2.0"
+    "@stylistic/eslint-plugin-js": "^1.5.1",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "12.2.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-formatter-summary-chart": "^0.3.0",
+    "eslint-plugin-css-modules": "^2.12.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-no-comments": "^1.1.10",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1"
   }
 }
