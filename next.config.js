@@ -2,7 +2,10 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-	reactStrictMode: true
+	reactStrictMode: true,
+	images: {
+		domains: ['googleusercontent.com']
+	}
 };
 
 const env = {

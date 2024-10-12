@@ -1,0 +1,136 @@
+.rootContainer {
+    padding: var(--padding-primary);
+    margin: 0 var(--padding-primary);
+    text-align: justify;
+    cursor: default;
+    user-select: none;
+}
+
+.sectionFlexContainer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: var(--padding-primary);
+    flex-direction: row;
+    align-items: center;
+}
+
+.sectionContainer {
+    padding: calc(10px + 1vw) calc(10px + 2vw);
+    align-items: center;
+    /* background-color: green; */
+}
+
+.imgContainer {
+    /* background-color: green; */
+    min-height: 80px;
+    min-width: 80px;
+    width: 20%;
+    max-height: 200px;
+    max-width: 200px;
+    /* padding: var(--padding-secondary); */
+}
+
+.profileImg {
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.bioContainer {
+    /* background-color: purple; */
+    min-height: 100px;
+    padding: calc(10px + 1vw) calc(10px + 2vw);
+    /* text-align: justify; */
+    width: 80%;
+    /* grid-column-start: 2;
+    grid-column-end: 5; */
+}
+
+.textHeader {
+    border-bottom: 1px solid black;
+    padding: 0 0 10px 0;
+    font-weight: bold;
+    /* background-color: red; */
+}
+
+.textSubHeader {
+    padding: 10px;
+	font-weight: bold;
+    /* background-color: red; */
+}
+
+.textContent {
+    padding: 10px 0 0 0;
+    /* background-color: purple; */
+}
+
+.connectSectionFlexContainer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: var(--padding-primary);
+    flex-direction: row;
+    align-items: center;
+}
+
+.connectCard {
+    display: inline-block;
+    /* background-color: rgb(211, 211, 211); */
+    height: 100px;
+    width: 150px;
+    border-radius: 5px;
+    padding: 25px 7px;
+    margin: 10px 25px;
+    font-size: medium;
+}
+
+.techCard {
+    display: inline-block;
+    background-color: rgb(211, 211, 211);
+    height: 80px;
+    width: 80px;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 10px;
+    font-size: small;
+}
+
+.techCardContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.connectCardContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+    /* background-color: red; */
+}
+
+@media (max-width: 750px) {
+    .rootContainer {
+        padding: 0;
+        margin: var(--padding-secondary);
+    }
+
+    .sectionFlexContainer {
+        flex-direction: column;
+        padding: var(--padding-primary) 0;
+    }
+
+    .bioContainer {
+        padding: calc(10px + 1vw) 0;
+    }
+
+    .connectSectionFlexContainer {
+        flex-direction: column;
+    }
+
+    .mobileViewMarginTop25 {
+        margin-top: 25px;
+    }
+}

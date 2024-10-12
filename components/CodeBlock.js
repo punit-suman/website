@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/codeBlock.module.css';
+import styles from './codeBlock.module.css';
 
 export default function CodeBlock() {
 	const [code, setCode] = useState("");
@@ -8,6 +8,7 @@ export default function CodeBlock() {
 	const [startLine4, setStartLine4] = useState(false);
 	const [startLine5, setStartLine5] = useState(false);
 	const [startLine6, setStartLine6] = useState(false);
+	const [startLine7, setStartLine7] = useState(false);
 	const [showCursor, setShowCursor] = useState(false);
 	const [showLoaderCursor, setShowLoaderCursor] = useState(false);
 	const newLine =
@@ -18,10 +19,10 @@ export default function CodeBlock() {
 	const line3 = `Website loading...`;
 	const line4 = `This website is currently under development.`;
 	const line5 = `Please come back later...`;
-	const line6 = `Contact: punit.suman1707@gmail.com`;
+	// const line6 = `Contact: punit.suman1707@gmail.com`;
 
 	function addLine(s, line, x = 0, prevLinesLength = 0, setThisLine = null, setNextLine = null) {
-		const interval = setInterval(addChar, 75);
+		const interval = setInterval(addChar, 50);
 		function addChar() {
 			s = s + line[s.length - (newLine.length * x) - prevLinesLength];
 			setCode(s);
@@ -109,17 +110,17 @@ export default function CodeBlock() {
 		}
 	}, [startLine5]);
 
-	useEffect(() => {
-		if (startLine6) {
-			var s = code;
-			setTimeout(() => {
-				s = s + newLine;
-				setCode(s);
-				// eslint-disable-next-line @stylistic/js/max-len
-				addLine(s, line6, 7, (line1 + line2 + line3 + line4 + line5).length, setStartLine6, null);
-			}, 1000);
-		}
-	}, [startLine6]);
+	// useEffect(() => {
+	// 	if (startLine6) {
+	// 		var s = code;
+	// 		setTimeout(() => {
+	// 			s = s + newLine;
+	// 			setCode(s);
+	// 			// eslint-disable-next-line @stylistic/js/max-len
+	// 			addLine(s, line6, 7, (line1 + line2 + line3 + line4 + line5).length, setStartLine6, setStartLine7);
+	// 		}, 1000);
+	// 	}
+	// }, [startLine6]);
 
 	return (
 		<div className={styles.root}>
