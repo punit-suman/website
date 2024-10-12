@@ -1,13 +1,13 @@
-import { Education } from "./education";
 import { Achievements } from "./achievements";
-import { TechLayout } from "./techs";
-import { SoftSkills } from "./softSkills";
 import { Contact } from "./contact";
+import { Education } from "./education";
+import { SoftSkills } from "./softSkills";
+import { TechLayout } from "./techs";
 
 export default {
-    Education: Education,
-    Achievements: Achievements,
-    TechLayout: TechLayout,
-    SoftSkills: SoftSkills,
-    Connect: Contact
-}
+	Education: Education,
+	Achievements: Achievements,
+	TechLayout: TechLayout,
+	SoftSkills: SoftSkills,
+	Connect: Contact
+};

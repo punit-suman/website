@@ -1,6 +1,6 @@
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { TagComponent } from '../../components/TagComponent';
 // import { TechCard } from '../../components/TechCard';
 import styles from '../../pageStyles/resume.module.css';
@@ -17,37 +17,47 @@ export function TechLayout({ isMobile = false }) {
 					<div className={styles.textContent}>
 						<div className={styles.textSubHeader}>{headers.technicalSub.progLang}</div>
 						<div>
-						{progLangs.map((t, i) => {
-							return (
-								<TagComponent text={t.name} percent={t.percent} />
-							)
-						})}</div>
+							{progLangs.map((t, i) => {
+								return (
+									<React.Fragment key={i}>
+										<TagComponent text={t.name} percent={t.percent} />
+									</React.Fragment>
+								);
+							})}</div>
 						<div className={styles.textSubHeader}>{headers.technicalSub.webTech}</div>
 						{webTechs.map((t, i) => {
 							return (
-								<TagComponent text={t.name} percent={t.percent} />
-							)
+								<React.Fragment key={i}>
+									<TagComponent text={t.name} percent={t.percent} />
+								</React.Fragment>
+							);
 						})}
 						<div className={styles.textSubHeader}>{headers.technicalSub.dbms}</div>
 						{dbms.map((t, i) => {
 							return (
-								<TagComponent text={t.name} percent={t.percent} />
-							)
+								<React.Fragment key={i}>
+									<TagComponent text={t.name} percent={t.percent} />
+								</React.Fragment>
+							);
 						})}
 						<div className={styles.textSubHeader}>{headers.technicalSub.cloud}</div>
 						{cloud.map((t, i) => {
 							return (
-								<TagComponent text={t.name} percent={t.percent} />
-							)
+								<React.Fragment key={i}>
+									<TagComponent text={t.name} percent={t.percent} />
+								</React.Fragment>
+							);
 						})}
 						<div className={styles.textSubHeader}>{headers.technicalSub.otherTools}</div>
 						{otherTools.map((t, i) => {
 							return (
-								<TagComponent text={t.name} percent={t.percent} />
-							)
+								<React.Fragment key={i}>
+									<TagComponent text={t.name} percent={t.percent} />
+								</React.Fragment>
+							);
 						})}
 					</div>
-				: <></>}
+					: <></>}
 			</div>
 		</div>
 	);

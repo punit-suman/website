@@ -1,10 +1,10 @@
-import React from 'react';
-import styles from '../../pageStyles/resume.module.css';
-import { headers } from '../../utils/resumeText';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import React from 'react';
+import styles from '../../pageStyles/resume.module.css';
+import { headers } from '../../utils/resumeText';
+// import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 export function Contact({ showHeader = true }) {
 	return (

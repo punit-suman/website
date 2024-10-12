@@ -7,8 +7,8 @@ export default function CodeBlock() {
 	const [startLine3, setStartLine3] = useState(false);
 	const [startLine4, setStartLine4] = useState(false);
 	const [startLine5, setStartLine5] = useState(false);
-	const [startLine6, setStartLine6] = useState(false);
-	const [startLine7, setStartLine7] = useState(false);
+	// const [startLine6, setStartLine6] = useState(false);
+	// const [startLine7, setStartLine7] = useState(false);
 	const [showCursor, setShowCursor] = useState(false);
 	const [showLoaderCursor, setShowLoaderCursor] = useState(false);
 	const newLine =
@@ -105,7 +105,7 @@ export default function CodeBlock() {
 				s = s + newLine;
 				setCode(s);
 				// eslint-disable-next-line @stylistic/js/max-len
-				addLine(s, line5, 6, (line1 + line2 + line3 + line4).length, setStartLine5, setStartLine6);
+				addLine(s, line5, 6, (line1 + line2 + line3 + line4).length, setStartLine5);
 			}, 1000);
 		}
 	}, [startLine5]);
