@@ -11,7 +11,6 @@ import styles from '../pageStyles/home.module.css';
 
 export default function Home() {
 	const [showContact, setShowContact] = useState(false);
-
 	useEffect(() => {
 		const captureVisit = async() => {
 			await axios("/api/visits");
